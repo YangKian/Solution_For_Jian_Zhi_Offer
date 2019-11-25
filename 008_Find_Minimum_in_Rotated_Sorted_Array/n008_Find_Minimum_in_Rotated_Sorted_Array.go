@@ -1,7 +1,7 @@
 package main
 
 func findMin(nums []int) int {
-	low, high := 0, len(nums) - 1
+	low, high := 0, len(nums)-1
 
 	//最小值一定落在 [low, high] 的区间中，如果当前已经满足 nums[low] < nums[high]，则可以直接返回 nums[low]
 	if nums[low] < nums[high] {
