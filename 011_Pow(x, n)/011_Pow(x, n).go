@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 //要点：注意边界条件的划分
 //1.任意数的 0 次幂都为1
 //2.x的-n次幂等于x的n次幂的倒数，此时需注意，x若为0， 则会出现异常结果，此处需要声明
@@ -34,4 +36,26 @@ func countPow(x float64, n int) float64 {
 		n >>= 1
 	}
 	return res
+}
+
+func main() {
+
+testLoop:
+	for val := 1; val < 7; val++ {
+		fmt.Printf("%d", val)
+		switch {
+		case val == 1:
+			fmt.Println("->Start")
+		case val == 5:
+			fmt.Println("->Break")
+			break testLoop
+		case val > 2:
+			fmt.Println("->Running")
+			break
+		default:
+			fmt.Println("->Progress")
+		}
+		fmt.Printf("select case val = %d done\n", val)
+	}
+	fmt.Println("for loop done")
 }
